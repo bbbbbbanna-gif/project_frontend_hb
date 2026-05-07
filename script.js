@@ -1,12 +1,56 @@
-
 (function () {
-  const links = document.querySelectorAll('.hero__link');
+  const links    = document.querySelectorAll('.hero__link');
+  const mobLinks = document.querySelectorAll('.mobile-menu__link');
   if (!links.length) return;
  
+  // Секции в том же порядке, что и ссылки в навигации
+  // hero__link--active ставится по реально видимой секции через IntersectionObserver
+  const sectionIds = ['hero', 'main', 'portfolio', 'certifications', 'contacts'];
+ 
+  function setActive(id) {
+    // Десктоп nav
+    links.forEach(link => {
+      const href = link.getAttribute('href').replace('#', '');
+      link.classList.toggle('hero__link--active', href === id);
+    });
+    // Мобильное меню
+    mobLinks.forEach(link => {
+      const href = link.getAttribute('href').replace('#', '');
+      link.classList.toggle('mobile-menu__link--active', href === id);
+    });
+  }
+ 
+  // IntersectionObserver — следит какая секция занимает большую часть экрана
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setActive(entry.target.id);
+      }
+    });
+  }, {
+    root: null,
+    // Срабатывает когда секция занимает центральную зону viewport
+    rootMargin: '-40% 0px -40% 0px',
+    threshold: 0
+  });
+ 
+  sectionIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+ 
+  // Клик по ссылке — сразу ставим активной, не ждём скролл
   links.forEach(link => {
-    link.addEventListener('click', function (e) {
-      links.forEach(l => l.classList.remove('hero__link--active'));
-      this.classList.add('hero__link--active');
+    link.addEventListener('click', function () {
+      const id = this.getAttribute('href').replace('#', '');
+      setActive(id);
+    });
+  });
+ 
+  mobLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      const id = this.getAttribute('href').replace('#', '');
+      setActive(id);
     });
   });
 })();
@@ -77,19 +121,26 @@
   }
  
   function updateSlider() {
-    const offset     = -(cardWidth + gap) * currentIndex;
+    const offset = -(cardWidth + gap) * currentIndex;
     track.style.transform = `translateX(${offset}px)`;
  
-    const maxIndex   = Math.max(0, cards.length - visibleCount);
-    const totalPages = Math.ceil(cards.length / visibleCount);
+    const maxIndex    = Math.max(0, cards.length - visibleCount);
+    const totalPages  = Math.ceil(cards.length / visibleCount);
     const currentPage = Math.floor(currentIndex / visibleCount) + 1;
  
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex >= maxIndex;
  
-    if (fillBar)     fillBar.style.width        = `${(currentPage / totalPages) * 100}%`;
-    if (currentSpan) currentSpan.textContent    = String(currentPage).padStart(2, '0');
-    if (totalSpan)   totalSpan.textContent      = String(totalPages).padStart(2, '0');
+    if (fillBar) {
+      // Ползунок: ширина = 1/totalPages трека, двигается translateX
+      const thumbW   = 100 / totalPages;
+      const thumbOff = (currentPage - 1) * thumbW;
+      fillBar.style.width     = `${thumbW}%`;
+      fillBar.style.transform = `translateX(${thumbOff / thumbW * 100}%)`;
+    }
+ 
+    if (currentSpan) currentSpan.textContent = String(currentPage).padStart(2, '0');
+    if (totalSpan)   totalSpan.textContent   = String(totalPages).padStart(2, '0');
   }
  
   prevBtn.addEventListener('click', () => {
@@ -137,7 +188,13 @@
     track.style.transform = `translateX(-${current * 100}%)`;
  
     if (currentEl) currentEl.textContent = String(current + 1).padStart(2, '0');
-    if (fillEl)    fillEl.style.width    = `${((current + 1) / total) * 100}%`;
+ 
+    if (fillEl) {
+      // Ползунок: ширина = 1/total трека, двигается translateX
+      const thumbW = 100 / total;
+      fillEl.style.width     = `${thumbW}%`;
+      fillEl.style.transform = `translateX(${current * 100}%)`;
+    }
  
     prevBtn.disabled = current === 0;
     nextBtn.disabled = current === total - 1;
@@ -206,7 +263,8 @@
  
     if (!ok && val.length > 0) {
       input.classList.add('cta__input--error');
-      setNote(MSG_INVALID, '#e05555');
+      setNote(MSG_INVALID, '#F55D6D');
+      setNote(MSG_EMPTY,   '#F55D6D');
     } else {
       input.classList.remove('cta__input--error');
       setNote(MSG_DEFAULT);

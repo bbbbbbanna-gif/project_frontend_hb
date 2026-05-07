@@ -43,7 +43,7 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-}background-image:
+} background-image:
       linear-gradient(93deg, #FFF 12.66%, rgba(255, 255, 255, 0.00) 97.56%),
       url("img/grant-lemons-jTCLppdwSEc-unsplash 1.png");
   background-size: contain;
@@ -111,7 +111,7 @@ html {
 .hero__phone {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   padding: 10px 16px;
   border-radius: 12px;
   background: var(--c-primary);
@@ -171,7 +171,7 @@ html {
   font-size: 20px;
   font-weight: 400;
   line-height: 32px;
-  max-width: 560px;
+  max-width: 788px;
   margin: 0;
 }
  
@@ -204,6 +204,10 @@ html {
    ABOUT US
 ═══════════════════════════════════════════════════════ */
 
+/* ═══════════════════════════════════════════════════════
+   ABOUT US
+═══════════════════════════════════════════════════════ */
+
 .about_us {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -214,39 +218,67 @@ html {
 }
 
 .about_us_content {
-  max-width: 788px;
   display: flex;
   flex-direction: column;
+  gap: 28px;
 }
 
 .about_us_title {
   color: var(--c-primary);
+  font-family: 'Outfit', sans-serif;
   font-size: 64px;
   font-weight: 700;
   line-height: 64px;
-  margin-bottom: 8px;
-  max-width: 488px;
-  margin-bottom: 28px;
 }
 
-.hero__text {
-  font-size: 16px;
-  line-height: 26px;
-  max-width: 788px;
+.about_us_text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.about_us_content {
-  font-size: 16px;
-  line-height: 26px;
-  max-width: 788px;
+.about_us_text {
+  color: var(--c-secondary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: 20px;
 }
+
+.about_us_text:last-of-type {
+  margin-bottom: 32px;
+}
+
+.about_us__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border-radius: 12px;
+  background: var(--c-primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+  width: 260px;
+}
+ 
+.about_us__button:hover  { background: var(--c-hover); transform: translateY(-1px); }
+.about_us__button:active { background: var(--c-pressed); transform: translateY(0); outline: none; }
 
 .about_us_img {
   width: 100%;
   height: 100%;
   min-height: 600px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 12px;
   display: block;
 }
 
@@ -334,6 +366,10 @@ html {
   min-height: 144px;
   background: var(--c-primary);
   border-radius: 0 0 12px 12px;
+}
+
+.team_our_portfolio_card:hover .team_our_portfolio_info {
+  background: var(--Brand-Hover, #0C3D54);
 }
 
 .team_our_portfolio_info_title {
@@ -447,7 +483,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 28px 24px 24px;
+  padding: 24px 24px 24px;
   position: relative;
   overflow: hidden;
   transition: transform 0.2s, background 0.2s;
@@ -467,28 +503,29 @@ html {
 .team_certifications_credentials_title {
   color: #fff;
   font-family: 'Outfit', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
   margin: 0;
 }
  
 .team_certifications_credentials_text {
-  color: var(--c-muted);
+  color: #D7DAE2;
   font-family: 'Outfit', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 24px;
   margin: 4px 0 0;
 }
  
 .team_certifications_credentials_year {
-  color: var(--c-muted);
+  color: #999EAD;
   font-family: 'Outfit', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.5;
-  margin-top: 2px;
+  line-height: 24px;
+  margin-top: 4px;
 }
 
 
@@ -508,10 +545,11 @@ html {
 .cert_winner_badge {
   display: inline-flex;
   align-self: flex-end;
-  padding: 6px 18px;
+  padding: 4px 12px;
+  gap: 10px;
   border-radius: 8px;
-  border: 1.5px solid rgba(255, 255, 255, 0.35);
-  color: #ffffff;
+  border: 1px solid var(--Grayscale-000, #FFF);
+  color: #D7DAE2;
   font-family: 'Outfit', sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -524,7 +562,8 @@ html {
 .cert_winner_badge_2 {
   display: inline-flex;
   align-self: flex-end;
-  padding: 6px 18px;
+  padding: 4px 12px;
+  gap: 10px;
   border-radius: 8px;
   border: none;
   color: none;
@@ -545,7 +584,7 @@ html {
   order: 2; /* после карточек */
   display: flex;
   justify-content: flex-end;
-  margin-top: 32px;
+  margin-top: 0px;
 }
 
 
@@ -555,7 +594,7 @@ html {
 ═══════════════════════════════════════════════════════ */
 
 .tp-section {
-  /* Локальные переменные — не конфликтуют с глобальными */
+
   --tp-primary:  #052838;
   --tp-hover:    #0C3D54;
   --tp-pressed:  #041A24;
@@ -569,9 +608,6 @@ html {
   box-sizing: border-box;
 }
 
-/* Сброс ::before / ::after внутри секции.
-   hero__phone::after добавляет SVG-иконку через content —
-   без этого она дублируется в карточках. */
 .tp-section *::before,
 .tp-section *::after {
   content: none !important;
@@ -709,6 +745,10 @@ html {
   text-decoration: none;
   letter-spacing: normal;
   text-transform: none;
+}
+
+.tp-section .tp-card:hover .tp-card__info {
+  background: var(--tp-hover, #0C3D54);
 }
 
 .tp-section .tp-card__text {
@@ -959,8 +999,10 @@ html {
  
 /* Default */
 .cta__input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   flex: 1 0 0;
-  height: auto;
   padding: 16px;
   border-radius: 12px;
   border: 1px solid var(--Secondary, #375360);
@@ -968,44 +1010,44 @@ html {
   color: #ffffff;
   font-family: 'Outfit', sans-serif;
   font-size: 16px;
-  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; 
+  line-height: 24px;
   outline: none;
   transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
   -webkit-appearance: none;
   appearance: none;
 }
- 
+
 /* Placeholder */
 .cta__input::placeholder {
   color: rgba(255, 255, 255, 0.38);
 }
- 
+
 /* Hover */
 .cta__input:hover:not(:focus):not(:disabled):not(.cta__input--error) {
-  border-color: rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--Brand-Primary, #052838);
+  background: var(--Brand-Hover, #0C3D54);
 }
- 
+
 /* Focused */
 .cta__input:focus:not(.cta__input--error) {
-  border-color: #ffffff;
-  background: rgba(255, 255, 255, 0.07);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  border-color: var(--Accent, #3F73FF);
+  background: transparent;
+  box-shadow: none;
+  color: var(--Grayscale-100, #F7F8FA);
 }
- 
+
 .cta__input:focus::placeholder {
   color: rgba(255, 255, 255, 0.18);
 }
- 
+
 /* Filled */
 .cta__input:not(:placeholder-shown):not(:focus):not(:disabled):not(.cta__input--error) {
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--Secondary, #375360);
+  background: transparent;
 }
- 
+
 /* Disabled */
 .cta__input:disabled {
   border-color: rgba(255, 255, 255, 0.08);
@@ -1013,22 +1055,22 @@ html {
   color: rgba(255, 255, 255, 0.2);
   cursor: not-allowed;
 }
- 
+
 .cta__input:disabled::placeholder {
   color: rgba(255, 255, 255, 0.18);
 }
- 
+
 /* Error */
-.cta__input--error {
-  border-color: #e05555 !important;
-  background: rgba(224, 85, 85, 0.07) !important;
-  box-shadow: 0 0 0 3px rgba(224, 85, 85, 0.13) !important;
+.cta__input--error,
+.cta__input--error:focus {
+  border-color: var(--Error, #F55D6D) !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
- 
+
 .cta__input--error::placeholder {
-  color: rgba(224, 85, 85, 0.55);
+  color: rgba(245, 93, 109, 0.55);
 }
- 
 /* ---- КНОПКА ---- */
 .cta__submit {
   flex-shrink: 0;
@@ -1336,6 +1378,79 @@ html {
   pointer-events: all;
 }
 
+/* ═══════════════════════════════════════════════════════
+   КНОПКИ-СТРЕЛКИ СЛАЙДЕРОВ — все состояния
+═══════════════════════════════════════════════════════ */
+
+/* Portfolio slider */
+.slider_btn svg rect {
+  transition: fill 0.2s;
+}
+
+.slider_btn:hover svg rect {
+  fill: var(--c-hover, #0C3D54);
+}
+
+.slider_btn:active svg rect {
+  fill: var(--c-pressed, #041A24);
+}
+
+.slider_btn:focus-visible svg rect {
+  fill: var(--c-hover, #0C3D54);
+  outline: 2px solid #3F73FF;
+  outline-offset: 2px;
+}
+
+.slider_btn:disabled svg rect {
+  fill: #E0E0E0;
+}
+
+.slider_btn:disabled svg path {
+  stroke: #9aa5ad;
+  fill: #9aa5ad;
+}
+
+/* Trusted Partners slider */
+.tp-section .tp-arrow svg rect {
+  transition: fill 0.2s;
+}
+
+.tp-section .tp-arrow:hover svg rect {
+  fill: var(--tp-hover, #0C3D54);
+}
+
+.tp-section .tp-arrow:active svg rect {
+  fill: var(--tp-pressed, #041A24);
+}
+
+.tp-section .tp-arrow:focus-visible svg rect {
+  fill: var(--tp-hover, #0C3D54);
+}
+
+.tp-section .tp-arrow:disabled svg rect {
+  fill: #E0E0E0;
+}
+
+.tp-section .tp-arrow:disabled svg path {
+  fill: #9aa5ad;
+}
+
+/* Transition для плавности */
+.slider_btn,
+.tp-section .tp-arrow {
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.slider_btn:hover:not(:disabled),
+.tp-section .tp-arrow:hover:not(:disabled) {
+  transform: translateY(calc(-50% - 78px)) scale(1.05);
+}
+
+.slider_btn:active:not(:disabled),
+.tp-section .tp-arrow:active:not(:disabled) {
+  transform: translateY(calc(-50% - 78px)) scale(0.97);
+}
+
 @media (max-width: 1024px) {
 
   .center {
@@ -1399,25 +1514,21 @@ html {
   /* ABOUT */
   
   .about_us {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
- 
-  /* На планшете картинка идёт СНИЗУ (текст сверху) */
-  .about_us_content { order: 1; }
-  .about_us_img     { order: 2; }
- 
-  .about_us_title {
-    font-size: 48px;
-  }
- 
-  .about_us_img {
-    min-height: 400px;
-    max-height: 480px;
-  }
+  padding-top: 80px;
+  padding-bottom: 80px;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
 
+.about_us_content { order: 1; }
+.about_us_img     { order: 2; }
+
+.about_us_title { font-size: 64px; line-height: 64px; }
+
+.about_us_img {
+  min-height: 400px;
+  max-height: 480px;
+}
 
   .team_our_portfolio_card {
     flex: 0 0 calc((100% - 24px) / 2);
@@ -1985,7 +2096,7 @@ html {
 
   /* Hero */
   .hero {
-    min-height: 853px;
+    max-height: 853px;
     background-position: center top;
     background-size: cover;
   }
@@ -2013,39 +2124,68 @@ html {
     margin-top: 40px;
   }
 
- .about_us {
-    padding-top: 48px;
-    padding-bottom: 48px;
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
- 
-  /* На мобайле картинка идёт СВЕРХУ */
-  .about_us_img     { order: 1; }
-  .about_us_content { order: 2; }
- 
-  .about_us_title {
-    font-size: 32px;
-    line-height: 40px;
-    margin-bottom: 16px;
-  }
- 
-  .about_us .hero__text {
-    font-size: 16px;
-    line-height: 26px;
-    margin-bottom: 14px;
-  }
- 
-  .about_us .hero__text:last-of-type {
-    margin-bottom: 0px;
-  }
- 
-  .about_us_img {
-    min-height: 280px;
-    max-height: 360px;
-    border-radius: 16px;
-  }
- 
+.about_us {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+/* Мобайл: картинка сверху, текст снизу */
+.about_us_img     { order: 1; }
+.about_us_content { order: 2; }
+
+.about_us_content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+.about_us_title {
+  color: var(--c-primary);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: normal;
+  font-feature-settings: 'liga' off, 'clig' off;
+}
+
+.about_us_text {
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.about_us_text:last-of-type {
+  margin-bottom: 0;
+}
+
+.about_us_content {
+  gap: 16px;
+}
+
+/* Текст параграфов внутри about_us_text */
+.about_us .hero__text {
+  color: var(--c-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.about_us_img {
+  min-height: 280px;
+  max-height: 360px;
+}
+
+.about_us__button {
+  width: 100%;
+  padding: 18px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-top: 26px;
+}
+
 
 
   /* Call to action */
@@ -2114,6 +2254,12 @@ html {
     margin-bottom: 16px;
   }
 
+  .team_our_portfolio_info_title {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 8px;
+  }
+
 .team_our_portfolio_text {
     font-size: 16px;
 font-style: normal;
@@ -2127,11 +2273,6 @@ line-height: 24px;
 
   }
   
-  .team_our_portfolio_info_title {
-    font-size: 24px;
-    line-height: 30px;
-    margin-bottom: 16px;
-  }
 
 
   .team_our_portfolio_card {
@@ -2150,12 +2291,19 @@ line-height: 24px;
   }
 
   /* Certifications */
-  .team_certifications_credentials_content { padding-right: 28px; }
+  .team_certifications_credentials_content { 
+    padding-right: 28px; }
 
   .team_certifications_credentials_card {
     flex: 0 0 85vw;
     height: 260px;
     padding: 16px;
+  }
+
+  .team_certifications_credentials_footer {
+    justify-content: flex-start;
+    margin-top: 0;
+    margin-bottom: 28px;
   }
 
   /* Trusted Partners */
@@ -2187,6 +2335,7 @@ line-height: 24px;
     .tp-card__info {
         padding: 20px 24px 44px 24px;
     }
+
 
     .tp-card__title {
         font-size: 24px;
