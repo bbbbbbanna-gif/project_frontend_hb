@@ -280,7 +280,7 @@ body {
 .slider_btn {
   position: absolute;
   top: 50%;
-  transform: translateY(calc(-50% - 40px));
+  transform: translateY(calc(-50% - 78px));
   z-index: 2;
   border: none;
   background: none;
@@ -609,7 +609,7 @@ body {
 .tp-section .tp-arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(calc(-50% - 40px));
+  transform: translateY(calc(-50% - 78px));
   z-index: 2;
   border: none;
   background: none;
@@ -1297,7 +1297,8 @@ body {
 }
 
   .mobile-menu {
-  display: none;
+  display: flex; /* всегда flex */
+  visibility: hidden;
   position: fixed;
   inset: 0;
   z-index: 1000;
@@ -1306,7 +1307,7 @@ body {
   padding: 20px 16px 24px;
   opacity: 0;
   transform: translateY(-8px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
   pointer-events: none;
 }
 
@@ -1324,6 +1325,7 @@ body {
 
 
 .mobile-menu.is-open {
+  visibility: visible;
   opacity: 1;
   transform: translateY(0);
   pointer-events: all;
