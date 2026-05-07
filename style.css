@@ -52,6 +52,10 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+html {
+  scroll-behavior: smooth;
+}
  
 .hero__container {
   display: flex;
@@ -77,6 +81,7 @@ body {
 .hero__nav {
   display: flex;
   gap: 40px;
+
 }
  
 .hero__link {
@@ -89,7 +94,7 @@ body {
   transition: color 0.2s;
 }
  
-.hero__link:hover { color: var(--c-primary); }
+.hero__link:hover { color: var(--Brand-Primary, #052838); }
  
 .hero__link--active {
   color: var(--c-primary);
@@ -1944,10 +1949,11 @@ body {
   transition: color 0.2s;
 }
 
-.mobile-menu__link:hover { color: var(--c-primary); }
+.mobile-menu__link:hover { color: var(--Brand-Primary, #052838); }
 
 .mobile-menu__link--active {
   color: var(--c-primary);
+  
 }
 
 .mobile-menu__phone {

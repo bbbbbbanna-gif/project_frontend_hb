@@ -5,7 +5,6 @@
  
   links.forEach(link => {
     link.addEventListener('click', function (e) {
-      e.preventDefault();
       links.forEach(l => l.classList.remove('hero__link--active'));
       this.classList.add('hero__link--active');
     });
