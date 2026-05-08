@@ -860,8 +860,8 @@ html {
 
 .faq_wrapper {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
   width: 100%;
 }
 
@@ -872,6 +872,7 @@ html {
   font-size: 64px;
   font-weight: 700;
   line-height: 64px;
+  max-width: 788px;
 }
 
 .questions_content {
